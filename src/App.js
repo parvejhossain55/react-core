@@ -4,14 +4,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Inputs from "./components/Inputs";
 
 const App = () => (
-    <div class="container" >
-        <div class="row justify-content-center">
-            <div class="col-8 mt-4">
-                <div class="card">
-                    <div class="card-header">
+    <div className="container" >
+        <div className="row justify-content-center">
+            <div className="col-8 mt-4">
+                <div className="card">
+                    <div className="card-header">
                         <h2>Practice React Input Element</h2>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                         <Inputs />
                     </div>
                 </div>
