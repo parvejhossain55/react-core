@@ -1,10 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Inputs from "./components/Inputs";
+import Inputs from "./components/InputElemets";
+import UncontrolledForm from "./components/UncontrollForm";
 
 const App = () => (
-    <div className="container" >
+    <div className="container">
         <div className="row justify-content-center">
             <div className="col-8 mt-4">
                 <div className="card">
@@ -12,7 +13,8 @@ const App = () => (
                         <h2>Practice React Input Element</h2>
                     </div>
                     <div className="card-body">
-                        <Inputs />
+                        {/* <Inputs /> */}
+                        <UncontrolledForm />
                     </div>
                 </div>
             </div>
