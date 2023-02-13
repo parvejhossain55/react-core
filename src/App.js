@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Inputs from "./components/InputElemets";
 import UncontrolledForm from "./components/UncontrollForm";
+import ControlledForm from "./components/ControlledForm";
 
 const App = () => (
     <div className="container">
@@ -14,7 +15,8 @@ const App = () => (
                     </div>
                     <div className="card-body">
                         {/* <Inputs /> */}
-                        <UncontrolledForm />
+                        {/* <UncontrolledForm /> */}
+                        <ControlledForm/>
                     </div>
                 </div>
             </div>
