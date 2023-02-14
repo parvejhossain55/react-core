@@ -13,7 +13,7 @@ class SignUpForm extends Component {
     state = {
         values,
         agreement: false,
-        errors: {}
+        errors: {},
     };
 
     handleChange = (e) => {
@@ -31,14 +31,11 @@ class SignUpForm extends Component {
         const { isValid, errors } = this.validate();
 
         if (isValid) {
-            console.log({
-                ...this.state.values,
-                agreement: this.state.agreement,
-            });
+            this.props.createUser(this.state.values);
             this.setState({ values, agreement: false, errors: {} });
         } else {
-            console.log(errors)
-            this.setState({errors})
+            console.log(errors);
+            this.setState({ errors });
         }
     };
 
