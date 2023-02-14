@@ -10,13 +10,16 @@ function InputElement(props) {
                 </label>
                 <input
                     type={props.type}
-                    className="form-control"
+                    className={
+                        props.error ? "form-control is-invalid" : "form-control"
+                    }
                     name={props.name}
                     id={props.name}
                     placeholder={props.placeholder}
                     value={props.value}
                     onChange={props.onChange}
                 />
+                {props.error && <div className="invalid-feedback">{props.error}</div>}
             </div>
         </div>
     );
@@ -28,6 +31,7 @@ InputElement.propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
+    error: PropTypes.string,
     onChange: PropTypes.func.isRequired,
 };
 

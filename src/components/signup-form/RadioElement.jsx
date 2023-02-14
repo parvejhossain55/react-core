@@ -7,7 +7,7 @@ function RadioElement(props) {
             <label htmlFor={props.value} className="form-check-label">
                 <input
                     type={props.type}
-                    className="form-check-input"
+                    className="form-check-input is-invalid"
                     name={props.name}
                     id={props.value}
                     value={props.value}

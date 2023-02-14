@@ -13,6 +13,7 @@ class SignUpForm extends Component {
     state = {
         values,
         agreement: false,
+        errors: {}
     };
 
     handleChange = (e) => {
@@ -27,9 +28,18 @@ class SignUpForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log({ ...this.state.values, agreement: this.state.agreement });
+        const { isValid, errors } = this.validate();
 
-        this.setState({ values, agreement: false });
+        if (isValid) {
+            console.log({
+                ...this.state.values,
+                agreement: this.state.agreement,
+            });
+            this.setState({ values, agreement: false, errors: {} });
+        } else {
+            console.log(errors)
+            this.setState({errors})
+        }
     };
 
     handleAggrement = (e) => {
@@ -37,6 +47,21 @@ class SignUpForm extends Component {
             ...this.state.values,
             agreement: e.target.checked,
         });
+    };
+
+    validate = () => {
+        const errors = {};
+        const {
+            values: { name, email, password, birthDate, gender },
+        } = this.state;
+
+        if (!name) errors.name = "Please Provide Your Name ";
+        if (!email) errors.email = "Please Provide Your Email Address";
+        if (!password) errors.password = "Please Provide Your Password";
+        if (!birthDate) errors.birthDate = "Please Provide Birth Date";
+        if (!gender) errors.gender = "Please Select Your Gender";
+
+        return { errors, isValid: Object.keys(errors).length === 0 };
     };
 
     render() {
@@ -48,6 +73,7 @@ class SignUpForm extends Component {
                     handleSubmit={this.handleSubmit}
                     agreement={this.state.agreement}
                     handleAggrement={this.handleAggrement}
+                    errors={this.state.errors}
                 />
             </div>
         );

@@ -1,6 +1,7 @@
 import React from "react";
 import InputElement from "./InputElement";
 import RadioElement from "./RadioElement";
+import PropTypes from "prop-types"
 
 function Form(props) {
     return (
@@ -10,6 +11,7 @@ function Form(props) {
                 label="Name"
                 placeholder="Enter Your Name"
                 value={props.values.name}
+                error={props.errors.name}
                 onChange={props.handleChange}
             />
             <InputElement
@@ -18,6 +20,7 @@ function Form(props) {
                 label="Email Address"
                 placeholder="Enter Your Email"
                 value={props.values.email}
+                error={props.errors.email}
                 onChange={props.handleChange}
             />
             <InputElement
@@ -26,6 +29,7 @@ function Form(props) {
                 label="Password"
                 placeholder="Enter Your Password"
                 value={props.values.password}
+                error={props.errors.password}
                 onChange={props.handleChange}
             />
             <InputElement
@@ -33,6 +37,7 @@ function Form(props) {
                 type="date"
                 label="Birth Date"
                 value={props.values.birthDate}
+                error={props.errors.birthDate}
                 onChange={props.handleChange}
             />
             <RadioElement
@@ -81,6 +86,15 @@ function Form(props) {
             </div>
         </form>
     );
+}
+
+Form.propType = {
+    values : PropTypes.object.isRequired,
+    agreement : PropTypes.bool.isRequired,
+    errors : PropTypes.object.isRequired,
+    handleChange : PropTypes.func.isRequired,
+    handleAggrement : PropTypes.func.isRequired,
+    handleSubmit : PropTypes.func.isRequired,
 }
 
 export default Form;
