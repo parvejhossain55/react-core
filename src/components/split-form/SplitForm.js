@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Form from "./Form";
-import InputElement from "./InputElement";
 
 
 class SplitForm extends Component {

@@ -4,7 +4,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 // import Inputs from "./components/InputElemets";
 // import UncontrolledForm from "./components/UncontrollForm";
 // import ControlledForm from "./components/ControlledForm";
-import SplitForm from './components/split-form/SplitForm';
+// import SplitForm from './components/split-form/SplitForm';
+import SignUpForm from './components/signup-form/SignUpForm.js';
 
 const App = () => (
     <div className="container">
@@ -18,7 +19,8 @@ const App = () => (
                         {/* <Inputs /> */}
                         {/* <UncontrolledForm /> */}
                         {/* <ControlledForm/> */}
-                        <SplitForm/>
+                        {/* <SplitForm/> */}
+                        <SignUpForm/>
                     </div>
                 </div>
             </div>
