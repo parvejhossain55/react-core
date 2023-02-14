@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Inputs from "./components/InputElemets";
-import UncontrolledForm from "./components/UncontrollForm";
-import ControlledForm from "./components/ControlledForm";
+// import Inputs from "./components/InputElemets";
+// import UncontrolledForm from "./components/UncontrollForm";
+// import ControlledForm from "./components/ControlledForm";
+import SplitForm from './components/split-form/SplitForm';
 
 const App = () => (
     <div className="container">
@@ -16,7 +17,8 @@ const App = () => (
                     <div className="card-body">
                         {/* <Inputs /> */}
                         {/* <UncontrolledForm /> */}
-                        <ControlledForm/>
+                        {/* <ControlledForm/> */}
+                        <SplitForm/>
                     </div>
                 </div>
             </div>
